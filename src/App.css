@@ -1,38 +1,246 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+:root{
+  --primary-white:#fff;
+  --primary-dark: rgba(255,255,255,0);
+  --primary-black: #000;
+  --primary-v: #610f70;
+  --primary-blue: #0000FF;
+  --primary-purple: #4B29CB;
+  --ease-out-quad: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+#navbar-top1{
+  height: 4.5rem;
+}
+.navbar-nav > .nav-link{
+  /* color: var(--primary-white) !important; */
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  /* border-top: 0.18rem solid var(--primary-white); */
+}
+#nav-con-btn{
+  margin-bottom:0.5rem;
+}
+.nav-item{
+    font-weight:500;
+    font-size:10px;
+}
+.navbar-nav > a.active , .navbar-nav>  .nav-link:focus{
+  
+
+  border-bottom: 0.18rem solid var(--primary-purple);
+}
+body{
+  font-family: "mulish" "san-serif";
+}
+a { 
+  text-decoration: none; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/**************NAVBAR***************/
+#nav-items-fin{
+  margin-left:20.5rem;
+}
+.acmnavlogo{
+  width: 4.0rem;
+  height: 4.0rem;
+}
+#Nav-midlle-items:focus{
+  border-bottom: 0.18rem solid var(--primary-blue);
+}
+#responsive-navbar-nav{
+ justify-content: flex-end;
+}
+#nav-btn{
+  /* justify-items: flex-end; */
+  float:right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+/*********************Home*****************/
+.abt{
+  text-align:center;
+  padding: 10px;
+}
+#ph1{
+  margin-left: 5rem;
+  margin-right: 5rem;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+#ph2{
+  margin-left: 5rem;
+  margin-right: 5rem;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+.abt-con1{
+  text-align:center;
+  padding-left: 10px;
+  padding-right:10px;
+  font-family: "mulish" "san-serif";
+  justifyContent: 'center';
+}
+.abt-con2{
+  text-align:center;
+  font-family: "mulish" "san-serif";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/*************************ABOUT****************/
+#Abt-img{
+  border-radius:25px;
+}
+/******************Team********************/
+.list-icon{
+  list-style:none;
+}
+#Linked-icon{
+      margin-left:1rem;
+      margin-right:1rem;
+}
+#Linked-icon:hover{
+  transform: scale(1.25);
+}
+#Mail-icon{
+  margin-left:1rem;
+  margin-right:1rem;
+}
+#Mail-icon:hover{
+transform: scale(1.25);
+}
+#Insta-icon{
+  margin-left:1rem;
+  margin-right:1rem;
+}
+#Insta-icon:hover{
+  transform: scale(1.25);
+  
+}
+
+.blog-img{
+  /* width: 30%; */
+  /* border-radius: 20.5rem; */
+  overflow: hidden;
+  position: relative;
+  height:280px;
+  box-shadow: rgb(0 0 0 / 22%) 0px 30px 60px -10px, rgb(0 0 0 / 25%) 0px 18px 36px -18px;
+  margin-bottom: 30px;
+  transition: transform 0.3s var(--ease-out-quad),box-shadow 0.3s var(--ease-out-quad);
+}
+.blog-card a{
+  display: block;
+}
+#Profile-img{
+  display: block;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 150px;
+    height: 150px;
+  object-fit: cover;
+    border-radius: 100%;
+}
+#Title-team{
+  text-align:center;
+  /* margin-left:5.0rem; */
+}
+#Profile-links{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+#Title-team-des{
+  text-align:center;
+  /* margin-left:6.0rem; */
+  font-weight: 500;
+  font-size: 1.0rem;
+  letter-spacing: 0.5px;
+}
+.blog-card{
+  margin-top: 1rem;
+  border-radius: 0px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.blog-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/***************Events*****************/
+#event-title{
+  text-align:center;
+  margin-top:0.5rem;
+}
+#event-discription{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  
+}
+#event-total{
+  align-items:center;
+ margin-left: 0.5rem;
+ //margin-top:2.5rem;
+}
+.container-fluid{
+  margin-top:2.5rem;
+}
+#Header{
+  margin-left:6.5rem;
+  margin-bottom:2.5rem;
+}
+#evt-det{
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+#evt-img{
+  margin-bottom:1.5rem;
+  width:20.5rem;
+  height:13.5rem;
+  border-radius:20px;
+}
+#evt-register{
+  margin-right:1.5rem;
+  margin-left:1.5rem;
+  /* margin-top:1.5rem; */
+}
+
+#evt-Brocher{
+  margin-left:1.5rem;
+  /* margin-top:1.5rem; */
+}
+.Total-event{
+  margin: 2rem;
+}
+
+#Event-gap {
+ margin: 2rem;
+ border-radius: 25px;
+}
+#Event-gap:hover{
+transform: scale(1.05);
+}
+#event-img{
+border-top-left-radius: 25px;
+border-top-right-radius:25px;
+}
+.pre-event-title{
+ margin-left:4rem;
+}
+
+/*************Contact**********/
+#btn-form{
+  background-color:#4B29CB;
 }
