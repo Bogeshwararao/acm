@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+body{
+    font-family: "mulish" "san-serif";
+  }
+ .acmfootlogo{
+    /* width:4.5rem; */
+    /* margin-left:12.5rem; */
+    /* height:4.5rem; */
+}
+.sistfootlogo{
+         width: 15.0rem;
+         height: 4.0rem;
+ 
+ }
+ .con-fotfin{
+    /* margin-bottom:1.5rem; */
+    list-style:none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.footer-bot {
+    margin-top:4.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: space-between;
+    background-color: #4B29CB;  
+    /* 6442E3 */
+    /* border-top-left-radius: 400px;
+	border-top-right-radius:40px; */
+}
+.res-foot{
+    padding-top:2.5rem;
+    padding-left:3.5rem;
+    padding-right:3.5rem;
+    /* padding-bottom:0.5rem; */
+}
+#fot-con-head{
+    color:#fff;
+
+    }
+#foot-link{
+    /* margin-bottom:2.5rem; */
+    text-decoration: none;
+    color:#fff;
+
+}
+/* #foot-hover:hover{
+    transform: scale(1.10);
+} */
