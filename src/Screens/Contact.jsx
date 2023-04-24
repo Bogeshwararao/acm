@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <>
     <div data-aos="fade-up">
-    <form >      
+ <form>  
      <section>
       <div
         class="d-flex flex-column min-vh-100 justify-content-center"
@@ -26,31 +26,51 @@ const Contact = () => {
               <div class="row">
                 <div class="col-md-6">
                   <div class="m-5 text-center"><h1>Welcome!</h1></div>
-
-                  <form class="m-5">
+                  <form class="m-5"
+  action="https://formspree.io/f/mbjeqanp"
+  method="POST"
+>  
                     <div class="mb-3">
-                      <label class="form-label" for="username">Username :</label>
+                    <label class="form-label" for="name">Name:</label>
+                    <input  class="form-control" type="text" id="name" name="name" placeholder="Enter your name" required/>
+                      {/* <label  name="message" class="form-label" for="username" >Username :</label>
                       <input   class="form-control" type="text"  placeholder="Enter your name" required
-                     />
+                     /> */}
                     </div>
+                    
                     <div class="mb-3">
-                      <label class="form-label" for="email">E-mail :</label>
+                    <label for="Email">Email:</label>
+                    <input  placeholder="Enter your Email" required
+                        class="form-control" type="email" id="email" name="email" />
+                      {/* <label  name="Email" class="form-label" for="email" >E-mail :</label>
                       <input
                       placeholder="Enter your email" required
                         class="form-control"
                         type="email"
                 
-                       />
+                       /> */}
                     </div>
                     <div class="mb-3">
-                      <label class="form-label" for="phone">Phone number :</label>
+                    <label for="phone">Phone number:</label>
+                    <input  placeholder="Enter your Phone number" required
+                        class="form-control" type="tel" id="phonenumber" name="phone number" />
+                      {/* <label  name="Email" class="form-label" for="email" >E-mail :</label>
+                      <input
+                      placeholder="Enter your email" required
+                        class="form-control"
+                        type="email"
+                
+                       /> */}
+                    </div>
+                    {/* <div class="mb-3">
+                      <label name="phone" class="form-label" for="phone">Phone number :</label>
                       <input
                       placeholder="Enter your phone number" required
                         class="form-control"
                         type="tel"
                       
                       />
-                    </div>
+                    </div> */}
                     <div class="">
                       <input
                       id="btn-form"
