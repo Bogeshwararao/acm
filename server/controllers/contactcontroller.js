@@ -1,13 +1,14 @@
 // contactcontroller.js
-
-const contact = async (req, res) => {
+const Contact = require('../models/contact-model')
+const contactForm = async (req, res) => {
     try {
-        console.log(req.body);
-        res.status(200).send("Welcome contact");
+        const response = req.body;
+        await Contact.create(response);
+        return res.status(200).json({ message: "Message sent successfully" });
     } catch (error) {
         console.error(error);
-        res.status(500).send("Internal Server Error");
+        return res.status(500).json({ message: "Message sending unsuccessful" });
     }
 };
 
-module.exports = { contact };
+module.exports = { contactForm };

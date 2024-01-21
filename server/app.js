@@ -6,9 +6,13 @@ const app = express();
 app.use(express.json())
 const PORT = 5001;
 const contactRouter = require('./router/contactroute');
+const connectDb = require("./util/dbutil")
 
 app.use("/api", contactRouter);
 
-app.listen(PORT, () => {
-    console.log(`Server is running at port:${PORT}`);
-});
+connectDb().then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running on port: ${PORT}`);
+    });
+  });
+  
