@@ -1,18 +1,21 @@
-// index.js or app.js
 require('events').defaultMaxListeners = 15;
 
 const express = require("express");
 const app = express();
-app.use(express.json())
 const PORT = 5001;
-const contactRouter = require('./router/contactroute');
-const connectDb = require("./util/dbutil")
+const connectDb = require("./util/dbutil");
+const cors = require("cors");
 
+app.use(express.json());
+
+// Use cors middleware to allow requests from any origin during development
+app.use(cors());
+
+const contactRouter = require('./router/contactroute');
 app.use("/api", contactRouter);
 
 connectDb().then(() => {
     app.listen(PORT, () => {
       console.log(`Server running on port: ${PORT}`);
     });
-  });
-  
+});
