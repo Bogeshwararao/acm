@@ -1,4 +1,10 @@
+const User = require("../models/contact-model");
+
 const contactForm = async (req, res) => {
+    console.log(req.body)
+    if(req.body==null){
+        return res.json({ message: "Data Not Received" });
+    }
     try {
         const { username, email, phone } = req.body;
 
@@ -8,12 +14,12 @@ const contactForm = async (req, res) => {
         }
 
         // Create the User document
-        await Contact.create({ username, email, phone });
-
+        await User.create({ username, email, phone });
+        // console.log(response)
         return res.status(200).json({ message: "Message sent successfully" });
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ message: "Message sending unsuccessful" });
+        // return res.status(500).json({ message: error });
     }
 };
 

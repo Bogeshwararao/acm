@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
-require('dotenv').config();
 
-const URL =process.env.MONGO_DB;
+const URL = "mongodb+srv://bogeshwararao:bogeshwararao@cluster0.ckhjmhh.mongodb.net/SIST_DB?retryWrites=true&w=majority";
 const connectDb = async () => {
     try {
         console.log("Connecting to MongoDB with URL");
-        await mongoose.connect(URL);
+        await mongoose.connect(URL, {
+            useNewUrlParser: false, // Remove useNewUrlParser option
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000, // Set a timeout for server selection
+        });
         console.log("Connection successful");
     } catch (error) {
         console.error("Connection failed:", error.message);
