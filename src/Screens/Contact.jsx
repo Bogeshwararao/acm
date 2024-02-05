@@ -1,5 +1,6 @@
-import { useState } from 'react';  // Remove the second import for React
+import React, { useState } from 'react';
 import axios from 'axios';
+import Footer from '../Components/Footer';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -29,24 +30,53 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-      </label>
-      <br />
-      <label>
-        Phone:
-        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="d-flex flex-column min-vh-100">
+      <div className="container mt-5 flex-grow-1">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label>Username:</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Phone:</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 };
 
