@@ -13,7 +13,6 @@ app.use(cors());
 
 const contactRouter = require('./router/contactroute');
 app.use("/api", contactRouter);
-
 connectDb().then(() => {
     app.listen(PORT, () => {
       console.log(`Server running on port: ${PORT}`);
