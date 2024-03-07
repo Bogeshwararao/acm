@@ -27,7 +27,7 @@ const fetchDataByEmail = async (req, res) => {
       res.json(user);
     } catch (error) {
       console.error('Error fetching data from MongoDB:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(404).json({ error: 'User not found' });
     }
   };
 

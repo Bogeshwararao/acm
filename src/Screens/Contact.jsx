@@ -47,8 +47,40 @@ const ContactForm = () => {
       <div className="container mt-5 flex-grow-1">
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <form onSubmit={handleSubmit}>
-              {/* ... (Your form fields) */}
+          <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label>Username:</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Phone:</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
@@ -77,22 +109,26 @@ const ContactForm = () => {
         </div>
 
         {/* Display Search Result */}
-        {searchResult && (
-          <div className="row justify-content-center mt-3">
-            <div className="col-md-6">
-              <h3>Search Result:</h3>
-              <p>
-                <strong>Username:</strong> {searchResult.username}
-              </p>
-              <p>
-                <strong>Email:</strong> {searchResult.email}
-              </p>
-              <p>
-                <strong>Phone:</strong> {searchResult.phone}
-              </p>
-            </div>
-          </div>
-        )}
+        <div className="row justify-content-center mt-3">
+  <div className="col-md-6">
+    {searchResult && searchResult.error ? (
+      <p className="text-danger">{searchResult.error}</p>
+    ) : searchResult ? (
+      <div>
+        <h3>Search Result:</h3>
+        <p>
+          <strong>Username:</strong> {searchResult.username}
+        </p>
+        <p>
+          <strong>Email:</strong> {searchResult.email}
+        </p>
+        <p>
+          <strong>Phone:</strong> {searchResult.phone}
+        </p>
+      </div>
+    ) : null}
+  </div>
+</div>
       </div>
       <Footer />
     </div>
